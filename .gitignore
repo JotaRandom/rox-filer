@@ -1,4 +1,67 @@
-# Ignore emacs backup files
+# Build directories
+build/
+_build/
+meson-private/
+meson-logs/
+ninja_deps
+ninja_build
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+*.exe
+*.out
+*.app
+
+# Executables
+rox
+rox-filer
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
 *~
-# and the generated manual page
+*.swo
+.DS_Store
+
+# Generated files
+*.1
+*.log
+
+# Local development files
+.env
+.env.local
+.env.*.local
+
+# Meson build system
+compile_commands.json
+
+# Manual pages
 rox.1
