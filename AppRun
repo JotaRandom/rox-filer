@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# ROX-Filer launcher (Python + GTK4 version)
+
+exec python3 -m ROX_Filer.src.rox_filer "$@"
