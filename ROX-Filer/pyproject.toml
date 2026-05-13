@@ -1,0 +1,22 @@
+[project]
+name = "rox-filer"
+version = "0.1.0"
+description = "ROX-Filer port to GTK4 + Python 3"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "PyGObject>=3.50.0",
+]
+
+[project.scripts]
+rox-filer = "rox_filer.main:main"
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+addopts = "-v --cov=rox_filer"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-cov",
+]
