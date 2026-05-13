@@ -1,0 +1,24 @@
+# ROX-Filer (GTK4 + Python Port)
+
+Port moderno del navegador de archivos ROX-Filer a **GTK4** y **Python 3**, orientado a compatibilidad con **Wayland**.
+
+## Estado actual
+- Estructura del proyecto
+- Ventana principal
+- Barra de herramientas básica
+- Barra de direcciones
+- Navegación básica de directorios
+
+## Ejecución
+
+```bash
+cd ROX-Filer
+pip install -e .
+rox-filer
+```
+
+## Próximos pasos
+- Implementar vista completa de archivos (IconView / ColumnView)
+- Drag & Drop
+- Thumbnails y tipos MIME
+- Testsuite completa
