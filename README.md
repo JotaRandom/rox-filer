@@ -1,46 +1,66 @@
-ROX-Filer
-=========
-A RISC OS-like filer for X
-by Thomas Leonard
+# ROX-Filer (Modern Python 3 + GTK4 Port)
 
+A modernized port of the classic RISC OS-like file manager for X11 and Wayland, built using Python 3, PyGObject, and GTK 4.
 
+## Quick Start & Local Execution
 
-Quick start
------------
-If you downloaded a source or binary tarball directly, type this ($ is the
-shell prompt):
+To run ROX-Filer locally using a virtual environment:
 
-	$ ./ROX-Filer/AppRun
+1. **Clone and enter the directory**:
+   ```bash
+   cd rox-filer
+   ```
 
-This will compile the filer (if necessary) and then run it.
+2. **Set up the virtual environment**:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install pygobject Pillow
+   ```
 
-However, it is more common to use Zero Install or a distribution package. To
-get the filer using Zero Install, do:
+3. **Run the file manager**:
+   ```bash
+   ./AppRun [options] [directory]
+   ```
 
-$ 0alias rox http://rox.sourceforge.net/2005/interfaces/ROX-Filer
-$ rox
+   *Use `./AppRun --help` to show all supported command-line parameters.*
 
+## Installation
 
-ROX-Filer
----------
-Documentation for ROX-Filer can be found in the directory ROX-Filer/Help.
+### Local Installation
+To make ROX-Filer accessible only to your user, you can create a symlink in your local bin directory:
+```bash
+ln -s /path/to/rox-filer/AppRun ~/.local/bin/rox-filer
+```
 
+### Global Installation
+For system-wide usage, you can symlink the launcher to `/usr/local/bin`:
+```bash
+sudo ln -s /absolute/path/to/rox-filer/AppRun /usr/local/bin/rox
+```
 
-Conditions
-----------
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+You can also copy the desktop configuration file and application icon to standard locations to integrate it with your desktop environment launcher:
+```bash
+cp /path/to/rox-filer/ROX-Filer.xml ~/.local/share/mime/packages/
+cp /path/to/rox-filer/ROX-Filer/app_icon/org.rox.filer.png ~/.local/share/icons/hicolor/512x512/apps/
+```
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+## Running under X11 vs Wayland
 
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ROX-Filer is built using native **GTK4** APIs via **PyGObject**, which makes it fully independent of X11-only libraries (such as Xlib or Xt).
 
+* **Under X11**: Simply launch `./AppRun`. GTK4 automatically hooks into your X server.
+* **Under Wayland**: Simply launch `./AppRun`. The application runs natively on Wayland without relying on XWayland. The window will be mapped correctly to the registered Application ID `org.rox.filer`.
 
-Please report any bugs to the [rox-devel mailing list](http://rox.sourceforge.net/desktop/lists).
+## Internationalization (i18n)
+
+ROX-Filer automatically detects and adapts to your system locale using the standard environment variables (`LANG`, `LC_ALL`, `LC_MESSAGES`).
+
+To force a specific language, run the application prefixing the environment variable:
+```bash
+LANG=es_ES.UTF-8 ./AppRun
+```
+
+## License
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.

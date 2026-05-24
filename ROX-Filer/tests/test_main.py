@@ -21,6 +21,7 @@ def test_main_function_exists():
 @patch('sys.exit')
 def test_main_execution(mock_exit, mock_app):
     """Test the main application entry point."""
+    mock_exit.side_effect = SystemExit
     mock_app_instance = MagicMock()
     mock_app.return_value = mock_app_instance
 
