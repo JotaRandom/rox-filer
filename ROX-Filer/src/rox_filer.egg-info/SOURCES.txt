@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/rox_filer/main.py
+src/rox_filer/window.py
+src/rox_filer.egg-info/PKG-INFO
+src/rox_filer.egg-info/SOURCES.txt
+src/rox_filer.egg-info/dependency_links.txt
+src/rox_filer.egg-info/entry_points.txt
+src/rox_filer.egg-info/requires.txt
+src/rox_filer.egg-info/top_level.txt
+tests/test_main.py
+tests/test_window.py

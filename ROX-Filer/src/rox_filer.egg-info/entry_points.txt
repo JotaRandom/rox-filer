@@ -1,0 +1,2 @@
+[console_scripts]
+rox-filer = rox_filer.main:main
